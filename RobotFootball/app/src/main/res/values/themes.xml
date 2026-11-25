@@ -1,0 +1,7 @@
+<resources>
+    <style name="Theme.RobotFootball" parent="android:Theme.Material.NoActionBar">
+        <item name="android:windowBackground">#020B1F</item>
+        <item name="android:statusBarColor">#020B1F</item>
+        <item name="android:navigationBarColor">#020B1F</item>
+    </style>
+</resources>
