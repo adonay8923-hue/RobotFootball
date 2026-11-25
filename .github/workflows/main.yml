@@ -13,6 +13,10 @@ jobs:
           java-version: 17
       - name: Aceptar licencias
         run: yes | "$ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager" --licenses || true
+      - name: Corregir import faltante
+        run: |
+          F=$(find . -name BluetoothScreen.kt | head -1)
+          grep -q "androidx.compose.ui.draw.clip" "$F" || sed -i '/^import androidx.compose.foundation.shape.RoundedCornerShape/a import androidx.compose.ui.draw.clip' "$F"
       - uses: gradle/actions/setup-gradle@v3
         with:
           gradle-version: 8.7
